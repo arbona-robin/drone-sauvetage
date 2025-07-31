@@ -1,0 +1,1338 @@
+/* =====================================================
+   TEMPLATE MODERNE POUR DRONE MARIN
+   Design épuré et professionnel
+   ===================================================== */
+
+/* RESET ET BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: #2d3748;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* VARIABLES CSS */
+:root {
+  --primary-color: #0077be;
+  --secondary-color: #00a8cc;
+  --accent-color: #ff6b35;
+  --text-dark: #2d3748;
+  --text-light: #718096;
+  --bg-light: #f7fafc;
+  --bg-white: #ffffff;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --border-radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ANIMATIONS CSS MODERNES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* UTILITAIRES */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+/* =====================================================
+   SECTION 1: HERO MODERNE
+   ===================================================== */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 190, 0.6) 0%,
+    rgba(0, 168, 204, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  padding: 0 24px;
+  z-index: 3;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  animation: slideInLeft 1s ease-out 0.2s both;
+  letter-spacing: -0.02em;
+  color: #05bff3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  animation: slideInRight 1s ease-out 0.4s both;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.hero-cta:hover::before {
+  left: 100%;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+  background: var(--accent-color);
+}
+
+/* =====================================================
+   SECTION À PROPOS
+   ===================================================== */
+
+.about {
+  padding: 120px 0;
+  background: var(--bg-white);
+}
+
+.about-content {
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+  margin-top: 40px;
+}
+
+.about-text h3:first-child {
+  margin-top: 0;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+.about-text strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* =====================================================
+   SECTION 2: FONCTIONNALITÉS MODERNES
+   ===================================================== */
+
+.features {
+  padding: 120px 0;
+  background: var(--bg-light);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  animation: fadeInUp 0.8s ease-out;
+  border: 1px solid rgba(0, 119, 190, 0.1);
+}
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.feature-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.feature-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.feature-image {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 190, 0.1),
+    rgba(0, 168, 204, 0.1)
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-image::after {
+  opacity: 1;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.feature-card:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+.feature-content {
+  padding: 32px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.feature-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* =====================================================
+   SECTION 3: CARACTÉRISTIQUES TECHNIQUES MODERNES
+   ===================================================== */
+
+.specifications {
+  padding: 120px 0;
+  background: var(--bg-white);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.spec-category {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  animation: fadeInUp 0.8s ease-out;
+  border: 1px solid rgba(0, 119, 190, 0.1);
+  position: relative;
+}
+
+.spec-category:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.spec-category:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.spec-category:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.spec-category:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.spec-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 190, 0.02),
+    rgba(0, 168, 204, 0.02)
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.spec-category:hover::before {
+  opacity: 1;
+}
+
+.spec-category-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.spec-category-header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.spec-category:hover .spec-category-header::before {
+  opacity: 1;
+}
+
+.spec-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.spec-content {
+  padding: 32px;
+}
+
+.spec-list {
+  list-style: none;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 119, 190, 0.1);
+  transition: var(--transition);
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-item:hover {
+  background: rgba(0, 119, 190, 0.02);
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 1rem;
+  padding: 12px 16px 12px 0;
+  vertical-align: top;
+  width: 40%;
+}
+
+.spec-value {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+  padding: 12px 0;
+  vertical-align: top;
+}
+
+/* =====================================================
+   SECTION 4: FABRICATION MODERNE
+   ===================================================== */
+
+.fabrication {
+  padding: 120px 0 0;
+  background: var(--bg-light);
+}
+
+.fabrication-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
+  margin-top: 60px;
+}
+
+.fabrication-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.fabrication-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 2px;
+}
+
+/* PROCESSUS DE FABRICATION */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.process-step {
+  background: var(--bg-white);
+  padding: 32px 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 119, 190, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.step-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.step-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* TABLEAUX DE RESSOURCES */
+.resources-tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.resource-table-container h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.resource-table {
+  width: 100%;
+  background: var(--bg-white);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border-collapse: collapse;
+}
+
+.resource-table th,
+.resource-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 119, 190, 0.1);
+}
+
+.resource-table th {
+  background: rgba(0, 119, 190, 0.05);
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-table td {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.resource-table tbody tr:hover {
+  background: rgba(0, 119, 190, 0.02);
+}
+
+.resource-table tbody tr:hover td {
+  color: var(--text-dark);
+}
+
+.total-row {
+  background: rgba(0, 119, 190, 0.05) !important;
+  font-weight: 600;
+}
+
+.total-row td {
+  color: var(--primary-color) !important;
+  font-size: 1.1em;
+}
+
+/* RÉSUMÉ DES COÛTS */
+.cost-summary {
+  background: var(--bg-white);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--primary-color);
+  margin-top: 40px;
+  margin-bottom: 60px; /* Ajouter une marge en bas pour espacer de la section suivante */
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 119, 190, 0.1);
+}
+
+.cost-item:last-child {
+  border-bottom: none;
+}
+
+.cost-label {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.cost-value {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* =====================================================
+   SECTION 5: ÉCOCONCEPTION MODERNE
+   ===================================================== */
+
+.eco-design {
+  padding: 120px 0 80px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.eco-design::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.eco-design .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Correction de la lisibilité des titres dans la section écoconception */
+.eco-design .section-title {
+  color: white;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+  background-clip: unset;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.eco-design .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.eco-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.eco-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.eco-card:hover::before {
+  opacity: 1;
+}
+
+.eco-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.eco-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.eco-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.eco-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.eco-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.eco-icon {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.eco-icon-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+}
+
+.eco-card:hover .eco-icon-img {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.eco-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.eco-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.eco-impact {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 48px 40px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.eco-impact-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.eco-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.eco-stat {
+  text-align: center;
+  animation: scaleIn 1s ease-out;
+}
+
+.eco-stat:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.eco-stat:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.eco-stat:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.eco-stat-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+  line-height: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+.eco-stat:nth-child(2) .eco-stat-number {
+  animation-delay: 1s;
+}
+
+.eco-stat:nth-child(3) .eco-stat-number {
+  animation-delay: 2s;
+}
+
+.eco-stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* STYLES GLOBAUX POUR IMAGES */
+img {
+  transition: var(--transition);
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Wrapper principal pour éliminer les espaces */
+main {
+  flex: 1;
+}
+
+/* =====================================================
+   FOOTER MODERNE
+   ===================================================== */
+
+.footer {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  padding: 40px 0 40px;
+  text-align: center;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0 0 40px 0;
+}
+
+.footer-text {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.footer-year {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.footer-school {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* =====================================================
+   STYLES DES LIENS MODERNES
+   ===================================================== */
+
+/* Styles généraux pour tous les liens */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  font-weight: 600;
+}
+
+/* Effet de soulignement animé pour tous les liens */
+a:not(.hero-cta):not(.resource-table a)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  transition: width 0.3s ease;
+}
+
+a:not(.hero-cta):not(.resource-table a):hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+a:not(.hero-cta):not(.resource-table a):hover::after {
+  width: 100%;
+}
+
+/* Styles spéciaux pour les liens dans la section hero */
+.hero-description a {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.hero-description a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), var(--accent-color));
+  transition: width 0.3s ease;
+}
+
+.hero-description a:hover {
+  color: white;
+  transform: translateY(-1px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.hero-description a:hover::after {
+  width: 100%;
+}
+
+/* Styles spéciaux pour les liens dans les tableaux de ressources */
+.resource-table a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: var(--transition);
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.resource-table a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  transition: width 0.3s ease;
+}
+
+.resource-table a:hover {
+  color: var(--primary-color);
+  background-color: rgba(0, 168, 204, 0.1);
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 119, 190, 0.3);
+  text-shadow: 0 0 4px var(--secondary-color);
+}
+
+.resource-table a:hover::after {
+  width: 80%;
+}
+
+/* Styles pour les liens dans le footer */
+.footer a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.footer a:hover {
+  color: white;
+  text-shadow: 0 0 8px var(--secondary-color);
+}
+
+.footer a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN MODERNE
+   ===================================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .features-grid,
+  .specs-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .resources-tables {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .resource-table-container {
+    min-width: unset;
+  }
+
+  .resource-table th,
+  .resource-table td {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .eco-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .eco-stats {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cost-summary {
+    padding: 24px;
+  }
+
+  .cost-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .fabrication-content {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 16px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+
+  .feature-content,
+  .spec-category,
+  .eco-card {
+    padding: 24px;
+  }
+
+  .eco-impact {
+    padding: 32px 24px;
+  }
+
+  .fabrication-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .process-step {
+    padding: 24px 20px;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .resource-table th,
+  .resource-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .cost-summary {
+    padding: 20px;
+  }
+}
+
+/* OPTIMISATIONS POUR TRÈS PETITS ÉCRANS */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .resource-table {
+    font-size: 0.8rem;
+  }
+
+  .resource-table th,
+  .resource-table td {
+    padding: 8px 10px;
+  }
+
+  .eco-stat-number {
+    font-size: 2.2rem;
+  }
+}

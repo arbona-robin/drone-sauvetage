@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Drone de Sauvetage en Mer - Projet Greta & Ernest | CTRL+FUN</title>
+    <meta name="description" content="Découvrez le projet innovant de Greta (10 ans) et Ernest (12 ans) : un drone marin de sauvetage conçu avec des matériaux recyclés. Stage CTRL+FUN - ASPTT & la plateforme_." />
+    <meta name="keywords" content="drone marin, sauvetage en mer, micro:bit, impression 3D, écoconception, robotique enfants, TUMO, stage technologie" />
+    <meta name="author" content="Greta & Ernest - TUMO la plateforme_" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Drone de Sauvetage en Mer - Projet Innovant par Greta & Ernest" />
+    <meta property="og:description" content="Un drone marin autonome conçu par deux enfants de 10 et 12 ans avec des matériaux recyclés. Découvrez leur aventure technologique !" />
+    <meta property="og:image" content="./assets/propulsion.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Drone de sauvetage en mer conçu par Greta et Ernest" />
+    <meta property="og:site_name" content="Drone Marin - CTRL+FUN" />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Drone de Sauvetage en Mer - Projet Greta & Ernest" />
+    <meta name="twitter:description" content="Un drone marin autonome conçu par deux enfants avec des matériaux recyclés. Innovation + écoresponsabilité !" />
+    <meta name="twitter:image" content="./assets/propulsion.png" />
+    <meta name="twitter:image:alt" content="Drone de sauvetage en mer éco-responsable" />
+    
+    <!-- WhatsApp specific (utilise Open Graph) -->
+    <meta property="og:image:type" content="image/jpeg" />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0077be" />
+    <meta name="application-name" content="Drone Marin CTRL+FUN" />
+    
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+    <!-- SECTION 1: HERO - Vidéo en arrière-plan avec titre et description -->
+    <section class="hero">
+      <div class="hero-background">
+        <!-- Vidéo du drone marin -->
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="assets/essais_drones.mp4" type="video/mp4">
+          <!-- Image de fallback si la vidéo ne charge pas -->
+          <img
+            src="https://picsum.photos/1920/1080?random=1"
+            alt="Image principale du projet drone marin"
+            class="hero-image"
+          />
+        </video>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Drone de Sauvetage en Mer
+        </h1>
+        <p class="hero-description">
+          Projet réalisé par Greta (10 ans) et Ernest (12 ans) dans le cadre du stage CTRL+FUN,
+          partenariat <a href="https://marseille.asptt.com/informations-pratiques-aspttmarseille/" target="_blank">ASPTT</a> et <a href="https://laplateforme.io/extrascolaire/" target="_blank">la plateforme_</a>. Un drone marin autonome conçu pour secourir les nageurs en difficulté.
+        </p>
+        <a href="#about" class="hero-cta">Découvrir le projet</a>
+      </div>
+    </section>
+
+    <!-- SECTION À PROPOS -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">À propos du projet</h2>
+        <p class="section-subtitle">
+          Stage CTRL+FUN - Partenariat <a href="https://marseille.asptt.com/informations-pratiques-aspttmarseille/" target="_blank">ASPTT</a> et <a href="https://laplateforme.io/extrascolaire/" target="_blank">la plateforme_</a>
+        </p>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Notre équipe</h3>
+            <p>
+              Greta (10 ans) et Ernest (12 ans) ont participé à un stage unique combinant 
+              <strong>technologie le matin</strong> et <strong>voile l'après-midi</strong>. 
+              Passionnés par la mer et la technologie, ils ont choisi de construire un 
+              drone de sauvetage en mer pour aider les nageurs en difficulté.
+            </p>
+            
+            <h3>Le concept</h3>
+            <p>
+              Notre drone de sauvetage peut être piloté manuellement par un sauveteur 
+              ou fonctionner de manière autonome. Il peut transporter une bouée de 
+              sauvetage vers une personne en détresse et l'aider à revenir vers la côte 
+              en toute sécurité.
+            </p>
+            
+            <h3>Nos découvertes techniques</h3>
+            <p>
+              Au début de notre projet, on ne savait pas du tout ce que c'était la conception 3D ! 
+              Avec <strong>Tinkercad</strong>, on a appris à créer nos propres pièces en 3D sur l'ordinateur. 
+              C'était magique de voir nos idées prendre forme à l'écran et de pouvoir les modifier facilement.
+            </p>
+            <p>
+              Ensuite, on a découvert l'<strong>impression 3D</strong>. Voir notre design se transformer en vrai objet 
+              qu'on pouvait toucher, c'était incroyable ! On a imprimé nos pieces avec du PLA recyclé.
+            </p>
+            <p>
+              Pour programmer les <strong>micro:bit</strong>, on a utilisé <strong>MakeCode</strong>. C'est comme des blocs 
+              de Lego mais pour coder ! On a programmé la télécommande qui utilise les mouvements pour 
+              diriger le drone, et aussi le drone lui-même avec toutes les sécurités.
+            </p>
+            <p>
+              Les cartes <strong>micro:bit</strong> sont vraiment géniales pour l'électronique et la robotique ! 
+              Elles ont des capteurs intégrés comme l'accéléromètre pour détecter les mouvements, 
+              et une radio pour communiquer entre elles. On a découvert qu'avec la carte 
+              <strong>Kitronik Robotics Board</strong>, on pouvait facilement contrôler nos moteurs étanches. 
+              C'était notre première approche de la robotique !
+            </p>
+            <p>
+              Le plus dur, c'était de comprendre pourquoi notre drone flottait ! On a appris ce qu'était 
+              la <strong>poussée d'Archimède</strong> : quand on met quelque chose dans l'eau, l'eau pousse 
+              vers le haut ! Et le <strong>centre de gravité</strong>, c'est le point d'équilibre de notre 
+              drone. Il fallait bien le placer pour que le drone reste stable sur l'eau.
+            </p>
+            
+            <h3>Philosophie éco-responsable</h3>
+            <p>
+              Nous avons utilisé un maximum de <strong>matériaux de récupération</strong> 
+              et de <strong>PLA biosourcé recyclé</strong> pour notre conception. 
+              Les serflex utilisés sont réutilisables, et notre approche privilégie 
+              l'imagination et la créativité plutôt que l'achat de composants neufs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FONCTIONNALITÉS -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Fonctionnalités</h2>
+        <p class="section-subtitle">
+          Les capacités de notre drone de sauvetage en mer
+        </p>
+
+        <div class="features-grid">
+          <!-- Fonctionnalité 1 -->
+          <div class="feature-card">
+            <div class="feature-image">
+              <img
+                src="./assets/makecode.png"
+                alt="Pilotage intelligent"
+              />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title">
+                Pilotage Intelligent
+              </h3>
+              <p class="feature-description">
+                Manuel avec télécommande micro:bit 
+                utilisant les mouvements (roll/pitch) et autonome avec sécurité 
+                automatique (arrêt si pas de signal pendant 2 secondes).
+              </p>
+            </div>
+          </div>
+
+          <!-- Fonctionnalité 2 -->
+          <div class="feature-card">
+            <div class="feature-image">
+              <img
+                src="./assets/propulsion.png"
+                alt="Propulsion étanche"
+              />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title">
+                Propulsion Étanche
+              </h3>
+              <p class="feature-description">
+                Deux moteurs étanches permettent une navigation précise en mer. 
+                La conception respecte les principes d'Archimède avec un centre 
+                de gravité optimisé pour une stabilité maximale.
+              </p>
+            </div>
+          </div>
+
+          <!-- Fonctionnalité 3 -->
+          <div class="feature-card">
+            <div class="feature-image">
+              <img
+                src="./assets/conception.png"
+                alt="Communication radio"
+              />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title">
+                Communication Radio
+              </h3>
+              <p class="feature-description">
+                Système de communication sans fil entre la télécommande et le drone 
+                via les cartes micro:bit. Portée testée et optimisée pour les 
+                interventions de sauvetage côtier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CARACTÉRISTIQUES TECHNIQUES -->
+    <section class="specifications">
+      <div class="container">
+        <h2 class="section-title">Caractéristiques Techniques</h2>
+        <p class="section-subtitle">
+          Les spécifications de notre drone de sauvetage
+        </p>
+
+        <div class="specs-grid">
+          <div class="spec-category">
+            <div class="spec-category-header">
+              <h3 class="spec-category-title">
+                Électronique
+              </h3>
+            </div>
+            <div class="spec-content">
+              <table class="spec-table">
+                <tr class="spec-row">
+                  <td class="spec-label">Contrôleur :</td>
+                  <td class="spec-value">2x micro:bit + Kitronik Robotics Board</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Communication :</td>
+                  <td class="spec-value">Radio micro:bit 2.4 GHz</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Alimentation :</td>
+                  <td class="spec-value">Piles 9v et batterie micro:bit (2x AAA)</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Sécurité :</td>
+                  <td class="spec-value">Arrêt auto après 2 sec sans signal</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="spec-category">
+            <div class="spec-category-header">
+              <h3 class="spec-category-title">
+                Propulsion
+              </h3>
+            </div>
+            <div class="spec-content">
+              <table class="spec-table">
+                <tr class="spec-row">
+                  <td class="spec-label">Moteurs :</td>
+                  <td class="spec-value">2x moteurs étanches 3-6V DC</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Direction :</td>
+                  <td class="spec-value">Allumage indépendant des moteurs</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="spec-category">
+            <div class="spec-category-header">
+              <h3 class="spec-category-title">
+                Matériaux Éco-responsables
+              </h3>
+            </div>
+            <div class="spec-content">
+              <table class="spec-table">
+                <tr class="spec-row">
+                  <td class="spec-label">Coque :</td>
+                  <td class="spec-value">Fritte de baignade récupérée et boite imprimée en PLA</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Flotteurs :</td>
+                  <td class="spec-value">Bouteilles plastique récupérées</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Fixations :</td>
+                  <td class="spec-value">Serflex réutilisables</td>
+                </tr>
+                <tr class="spec-row">
+                  <td class="spec-label">Éléments déco :</td>
+                  <td class="spec-value">Matériaux de récupération</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FABRICATION -->
+    <section class="fabrication">
+      <div class="container">
+        <h2 class="section-title">Processus de Fabrication</h2>
+        <p class="section-subtitle">
+          Découvrez les étapes de conception et les ressources nécessaires pour réaliser ce drone marin
+        </p>
+
+        <div class="fabrication-content">
+          <div class="fabrication-process">
+            <h3 class="fabrication-subtitle">Étapes de Réalisation</h3>
+                        <div class="process-steps">
+              <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Conception & Design 3D</h4>
+                  <p>Croquis initial et modélisation des pièces avec Tinkercad pour l'impression 3D</p>
+                </div>
+              </div>
+              
+              <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Assemblage Structure</h4>
+                  <p>Assemblage des flotteurs recyclés, fixation des moteurs étanches avec serflex</p>
+                </div>
+              </div>
+              
+              <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Programmation micro:bit</h4>
+                  <p>Développement du code pour télécommande et drone avec sécurités intégrées</p>
+                </div>
+              </div>
+              
+              <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Tests en Mer</h4>
+                  <p>Tests de flottabilité en bassin puis essais réels en mer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fabrication-resources">
+            <h3 class="fabrication-subtitle">Matériaux et Outils</h3>
+            <div class="resources-tables">
+              <div class="resource-table-container">
+                <h4>Composants Électroniques</h4>
+                <table class="resource-table">
+                  <thead>
+                    <tr>
+                      <th>Composant</th>
+                      <th>Quantité</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="https://www.kubii.com/fr/kits-micro-controleurs/3092-kit-microbit-go-v2-5051259252592.html" target="_blank">micro:bit v2</a></td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td><a href="https://www.gotronic.fr/art-carte-compact-robotics-board-5693-32564.htm?srsltid=AfmBOorrgo7qSc3QfNL2Xb9TezXBFHKz_KCfiCt1mXVh6A58ftBN7Wxs" target="_blank">Kitronik Robotics Board</a></td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td><a href="https://www.amazon.fr/dp/B07WY4MDYZ?ref=ppx_yo2ov_dt_b_fed_asin_title" target="_blank">Moteur étanche DC 3-6V</a></td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Piles 9V</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td><a href="https://www.amazon.fr/HeyNana-supports-connecteur-clip-batterie/dp/B0919H1113/ref=sr_1_6?dib=eyJ2IjoiMSJ9.hGzMfZPy8NUu_oPqEr57b5h7basKOTDaFdgsSg3tWdcrff3HsDrJf7zn5AqKgAdiF6Q4AaTl63o3o6YdG6VorbR6UwY5hpOjPg_MNPaRQG3HhO4XSpuKEhQNrw8Ab6cIC0Ui1ws0VETHWidIeq6XJUvQD7vKuAu5zCEIy3joTjCZLT5XDJSRiiNoXavdcLJprXbvpQWGp6CUoopx5AEM9e82pR0Uh7GkIafRlWaKdbiXWMftRyA3mP0iu1Ishowm4r6NiN7II4lGqmw4B7AcGpgImyT-YJR1CVqEE-7LQu4.qKwaEEP5qgca0is8STnhlMiNy2QAddDlFwh3DVnhCTo&dib_tag=se&keywords=9V+cable&qid=1753971540&sr=8-6" target="_blank">Attache pile 9V</a></td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="resource-table-container">
+                <h4>Matériaux Éco-responsables</h4>
+                <table class="resource-table">
+                  <thead>
+                    <tr>
+                      <th>Article</th>
+                      <th>Quantité</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>PLA biosourcé recyclé (chutes)</td>
+                      <td>50g</td>
+                    </tr>
+                    <tr>
+                      <td>Bouteilles plastique (récup)</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td><a href="https://www.amazon.fr/MgcTolBox-Plastique-R%C3%A9utilisables-Serre-Cable-R%C3%A9sistant/dp/B0BR166524/ref=sr_1_2_sspa?crid=2Z4DORAL0ESYK&dib=eyJ2IjoiMSJ9.OfVpniNyizrsqkqDt7tWl0Kjomt9Mu6ctdjRtXweClTfC-fsv2Pp3H4eLZIrM8hkulsx9C2qv6Prqmzp47XMiHEO8Rb8e8uLCj95kq9BN_HLEXpDcr02ljbitrWTbijMGaFmOy-s11IzoQMTjoq_L6I8rWpUOouAi2W1WrsquqlOeAx_efd8krR5qDEq4G-q0DgdZEKXhySAu1KeoOHesfRUBvnWhf_vDz7-kxv2s2qjibMSGsxFo2XHcQA6mpNT_U3bfWus1Ye0VtZH-E_9QmaM4AnVw01jaT0IUcCWThE.OYFnCK2um_Sr9bugiZamw3Y_QQdR6vlJmlQOb7DWO7Y&dib_tag=se&keywords=serflex%2Breutilisable&qid=1753971598&sprefix=serflex%2Br%C3%A9uti%2Caps%2C148&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1" target="_blank">Serflex réutilisables (100 pcs)</a></td>
+                      <td>1 lot</td>
+                    </tr>
+                    <tr>
+                      <td>Colle chaude (bâtons)</td>
+                      <td>5</td>
+                    </tr>
+                    <tr>
+                      <td>Éléments déco (récup)</td>
+                      <td>divers</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- SECTION 5: ÉCOCONCEPTION -->
+    <section class="eco-design">
+      <div class="container">
+        <h2 class="section-title">Écoconception</h2>
+        <p class="section-subtitle">
+          Notre approche responsable : recycler, réutiliser, créer !
+        </p>
+
+        <div class="eco-grid">
+          <div class="eco-card">
+            <div class="eco-icon">
+              <span style="font-size: 3rem;">♻️</span>
+            </div>
+            <h3 class="eco-title">
+              PLA Biosourcé Recyclé
+            </h3>
+            <p class="eco-description">
+              Toutes nos pièces 3D sont imprimées avec du PLA biosourcé 
+              fabriqué à partir de chutes de filaments récupérés, 
+              donnant une seconde vie aux déchets d'impression.
+            </p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon">
+              <span style="font-size: 3rem;">🗂️</span>
+            </div>
+            <h3 class="eco-title">
+              Matériaux de Récupération
+            </h3>
+            <p class="eco-description">
+              Flotteurs en bouteilles plastique récupérées, éléments décoratifs 
+              de récupération. Notre approche privilégie l'imagination plutôt 
+              que l'achat de composants neufs.
+            </p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon">
+              <span style="font-size: 3rem;">🔧</span>
+            </div>
+            <h3 class="eco-title">
+              Fixations Réutilisables
+            </h3>
+            <p class="eco-description">
+              Les serflex utilisés sont réutilisables, permettant de démonter 
+              et remonter facilement notre drone pour l'entretien ou les améliorations 
+              futures sans créer de déchets.
+            </p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-icon">
+              <span style="font-size: 3rem;">🌱</span>
+            </div>
+            <h3 class="eco-title">
+              Éducation Environnementale
+            </h3>
+            <p class="eco-description">
+              Ce projet sensibilise les jeunes à l'écoconception et démontre 
+              qu'innovation et respect de l'environnement peuvent aller de pair 
+              dans la technologie marine.
+            </p>
+          </div>
+        </div>
+
+        <div class="eco-impact">
+          <h3 class="eco-impact-title">Notre Impact Positif</h3>
+          <div class="eco-stats">
+            <div class="eco-stat">
+              <span class="eco-stat-number">
+                1 semaine
+              </span>
+              <span class="eco-stat-label">
+                Temps de fabrication (5 matinées)
+              </span>
+            </div>
+            <div class="eco-stat">
+              <span class="eco-stat-number">
+                100%
+              </span>
+              <span class="eco-stat-label">
+                Matériaux de récupération pour la structure
+              </span>
+            </div>
+            <div class="eco-stat">
+              <span class="eco-stat-number">
+                0
+              </span>
+              <span class="eco-stat-label">
+                Déchet plastique (tout réutilisé)
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            Projet réalisé par les <strong>Étudiants du stage CTRL+FUN</strong> -
+            <span class="footer-year">2025</span>
+          </p>
+          <p class="footer-school">
+            <a href="https://laplateforme.io/extrascolaire/" target="_blank">La Plateforme_</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
