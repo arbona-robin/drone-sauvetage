@@ -1066,13 +1066,17 @@ a {
 
 /* Effet de soulignement animé pour tous les liens */
 a:not(.hero-cta):not(.resource-table a)::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
   transition: width 0.3s ease;
 }
 
@@ -1096,13 +1100,17 @@ a:not(.hero-cta):not(.resource-table a):hover::after {
 }
 
 .hero-description a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), var(--accent-color));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6),
+    var(--accent-color)
+  );
   transition: width 0.3s ease;
 }
 
@@ -1129,14 +1137,18 @@ a:not(.hero-cta):not(.resource-table a):hover::after {
 }
 
 .resource-table a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
   transition: width 0.3s ease;
 }
 
