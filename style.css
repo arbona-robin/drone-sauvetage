@@ -283,7 +283,13 @@ body {
 
 .about {
   padding: 120px 0;
-  background: var(--bg-white);
+  background: linear-gradient(rgba(0, 119, 190, 0.9), rgba(0, 168, 204, 0.85)),
+    url("./assets/drone_1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
 }
 
 .about-content {
@@ -296,9 +302,10 @@ body {
 .about-text h3 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: white;
   margin-bottom: 24px;
   margin-top: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .about-text h3:first-child {
@@ -308,13 +315,41 @@ body {
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-light);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 32px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .about-text strong {
-  color: var(--text-dark);
+  color: white;
   font-weight: 600;
+}
+
+/* Amélioration de la lisibilité sur les arrière-plans */
+.about .section-title {
+  color: white;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+  background-clip: unset;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about .section-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.features .section-title,
+.features .section-subtitle,
+.fabrication .section-title,
+.fabrication .section-subtitle {
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.about-text h3,
+.about-text p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* =====================================================
@@ -323,7 +358,15 @@ body {
 
 .features {
   padding: 120px 0;
-  background: var(--bg-light);
+  background: linear-gradient(
+      rgba(247, 250, 252, 0.9),
+      rgba(247, 250, 252, 0.85)
+    ),
+    url("./assets/drone_2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .features-grid {
@@ -583,7 +626,15 @@ body {
 
 .fabrication {
   padding: 120px 0 0;
-  background: var(--bg-light);
+  background: linear-gradient(
+      rgba(247, 250, 252, 0.9),
+      rgba(247, 250, 252, 0.85)
+    ),
+    url("./assets/pilotes.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .fabrication-content {
@@ -988,6 +1039,40 @@ img {
 
 img:hover {
   transform: scale(1.02);
+}
+
+/* Styles spéciaux pour les liens dans la section about */
+.about a {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.about a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6),
+    var(--accent-color)
+  );
+  transition: width 0.3s ease;
+}
+
+.about a:hover {
+  color: white;
+  transform: translateY(-1px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.about a:hover::after {
+  width: 100%;
 }
 
 /* Wrapper principal pour éliminer les espaces */
