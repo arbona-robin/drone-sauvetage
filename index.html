@@ -205,12 +205,15 @@
     </script>
   </head>
   <body>
-    <main>
+    <!-- Skip Navigation Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <main id="main-content">
     <!-- SECTION 1: HERO - Vidéo en arrière-plan avec titre et description -->
     <section class="hero">
       <div class="hero-background">
         <!-- Vidéo du drone marin -->
-        <video autoplay muted loop playsinline webkit-playsinline preload="metadata" class="hero-video" id="hero-video">
+        <video autoplay muted loop playsinline webkit-playsinline preload="metadata" class="hero-video" id="hero-video" aria-label="Vidéo de démonstration du drone de sauvetage en mer">
           <!-- WebM format first (better compression) - Desktop -->
           <source src="assets/drone_final_hq.webm" type="video/webm" media="(min-width: 768px)">
           <!-- WebM format first (better compression) - Mobile -->
@@ -224,12 +227,22 @@
             <source srcset="./assets/drone_1.webp" type="image/webp">
             <img
               src="./assets/drone_1.jpeg"
-              alt="Image principale du projet drone marin"
+              alt="Drone de sauvetage en mer flottant sur l'eau, conçu par Greta et Ernest"
               class="hero-image"
               loading="lazy"
             />
           </picture>
         </video>
+        
+        <!-- Video Accessibility Controls -->
+        <div class="video-controls" aria-label="Contrôles de la vidéo">
+          <button class="video-control-btn" id="video-toggle" aria-label="Pause/Lecture de la vidéo">
+            <span id="video-toggle-text">Pause</span>
+          </button>
+          <div class="sr-only" id="video-description">
+            Vidéo muette montrant le drone de sauvetage en mer en fonctionnement, naviguant sur l'eau pour démontrer ses capacités de sauvetage.
+          </div>
+        </div>
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -240,14 +253,14 @@
           Projet réalisé par Greta (10 ans) et Ernest (12 ans) dans le cadre du stage CTRL+FUN,
           partenariat <a href="https://marseille.asptt.com/informations-pratiques-aspttmarseille/" target="_blank">ASPTT</a> et <a href="https://laplateforme.io/extrascolaire/" target="_blank">la plateforme_</a>. Un drone marin conçu pour secourir les nageurs en difficulté.
         </p>
-        <a href="#about" class="hero-cta">Découvrir le projet</a>
+        <a href="#about" class="hero-cta" aria-label="Découvrir le projet de drone de sauvetage (aller à la section À propos)">Découvrir le projet</a>
       </div>
     </section>
 
     <!-- SECTION À PROPOS -->
-    <section id="about" class="about">
+    <section id="about" class="about" aria-labelledby="about-title">
       <div class="container">
-        <h2 class="section-title">À propos du projet</h2>
+        <h2 id="about-title" class="section-title">À propos du projet</h2>
         <p class="section-subtitle">
           Stage CTRL+FUN - Partenariat <a href="https://marseille.asptt.com/informations-pratiques-aspttmarseille/" target="_blank">ASPTT</a> et <a href="https://laplateforme.io/extrascolaire/" target="_blank">la plateforme_</a>
         </p>
@@ -310,9 +323,9 @@
     </section>
 
     <!-- SECTION 2: FONCTIONNALITÉS -->
-    <section id="features" class="features">
+    <section id="features" class="features" aria-labelledby="features-title">
       <div class="container">
-        <h2 class="section-title">Fonctionnalités</h2>
+        <h2 id="features-title" class="section-title">Fonctionnalités</h2>
         <p class="section-subtitle">
           Les capacités de notre drone de sauvetage en mer
         </p>
@@ -786,6 +799,34 @@
         });
       });
 
+      // Video Accessibility Controls
+      const video = document.getElementById('hero-video');
+      const toggleBtn = document.getElementById('video-toggle');
+      const toggleText = document.getElementById('video-toggle-text');
+
+      if (toggleBtn && video) {
+        toggleBtn.addEventListener('click', function() {
+          if (video.paused) {
+            video.play();
+            toggleText.textContent = 'Pause';
+            toggleBtn.setAttribute('aria-label', 'Mettre en pause la vidéo');
+          } else {
+            video.pause();
+            toggleText.textContent = 'Lecture';
+            toggleBtn.setAttribute('aria-label', 'Lire la vidéo');
+          }
+        });
+      }
+
+      // Keyboard navigation improvements
+      document.addEventListener('keydown', function(e) {
+        // Allow escape key to close any focused interactive elements
+        if (e.key === 'Escape') {
+          if (document.activeElement && document.activeElement.blur) {
+            document.activeElement.blur();
+          }
+        }
+      });
     </script>
   </body>
 </html>
