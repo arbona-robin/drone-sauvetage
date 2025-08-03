@@ -309,7 +309,7 @@ body {
 .about {
   padding: 120px 0;
   background: linear-gradient(rgba(0, 119, 190, 0.9), rgba(0, 168, 204, 0.85)),
-    url("./assets/drone_1.jpeg");
+    url("./assets/drone_1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -387,7 +387,7 @@ body {
       rgba(247, 250, 252, 0.9),
       rgba(247, 250, 252, 0.85)
     ),
-    url("./assets/drone_2.jpeg");
+    url("./assets/drone_2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -655,7 +655,7 @@ body {
       rgba(247, 250, 252, 0.9),
       rgba(247, 250, 252, 0.85)
     ),
-    url("./assets/pilotes.jpeg");
+    url("./assets/pilotes.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

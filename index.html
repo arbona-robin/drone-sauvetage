@@ -67,12 +67,15 @@
           <!-- MP4 fallback for older browsers - Mobile -->
           <source src="assets/drone_final_mobile.mp4" type="video/mp4" media="(max-width: 767px)">
           <!-- Image de fallback si la vidéo ne charge pas -->
-          <img
-            src="./assets/drone_1.jpeg"
-            alt="Image principale du projet drone marin"
-            class="hero-image"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="./assets/drone_1.webp" type="image/webp">
+            <img
+              src="./assets/drone_1.jpeg"
+              alt="Image principale du projet drone marin"
+              class="hero-image"
+              loading="lazy"
+            />
+          </picture>
         </video>
       </div>
       <div class="hero-overlay"></div>
@@ -165,11 +168,14 @@
           <!-- Fonctionnalité 1 -->
           <div class="feature-card">
             <div class="feature-image">
-              <img
-                src="./assets/makecode.png"
-                alt="Pilotage intelligent"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="./assets/makecode.webp" type="image/webp">
+                <img
+                  src="./assets/makecode.png"
+                  alt="Pilotage intelligent"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="feature-content">
               <h3 class="feature-title">
@@ -194,11 +200,14 @@
           <!-- Fonctionnalité 2 -->
           <div class="feature-card">
             <div class="feature-image">
-              <img
-                src="./assets/drone_2.jpeg"
-                alt="Propulsion étanche"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="./assets/drone_2.webp" type="image/webp">
+                <img
+                  src="./assets/drone_2.jpeg"
+                  alt="Propulsion étanche"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="feature-content">
               <h3 class="feature-title">
@@ -215,11 +224,14 @@
           <!-- Fonctionnalité 3 -->
           <div class="feature-card">
             <div class="feature-image">
-              <img
-                src="./assets/conception.png"
-                alt="Communication radio"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="./assets/conception.webp" type="image/webp">
+                <img
+                  src="./assets/conception.png"
+                  alt="Communication radio"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="feature-content">
               <h3 class="feature-title">
