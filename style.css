@@ -185,6 +185,31 @@ body {
   opacity: 0.9;
 }
 
+/* Mobile video optimizations */
+@media (max-width: 768px) {
+  .hero-video {
+    /* Show video on mobile - JS will handle fallback if needed */
+    display: block;
+  }
+  
+  .hero-image {
+    display: none;
+    opacity: 0.3;
+  }
+}
+
+/* Slow connection handling */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  
+  .hero-image {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;

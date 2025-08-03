@@ -57,8 +57,15 @@
     <section class="hero">
       <div class="hero-background">
         <!-- Vidéo du drone marin -->
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video" id="hero-video">
-          <source src="assets/drone_final.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline webkit-playsinline preload="metadata" class="hero-video" id="hero-video">
+          <!-- WebM format first (better compression) - Desktop -->
+          <source src="assets/drone_final.webm" type="video/webm" media="(min-width: 768px)">
+          <!-- WebM format first (better compression) - Mobile -->
+          <source src="assets/drone_final_mobile.webm" type="video/webm" media="(max-width: 767px)">
+          <!-- MP4 fallback for older browsers - Desktop -->
+          <source src="assets/drone_final.mp4" type="video/mp4" media="(min-width: 768px)">
+          <!-- MP4 fallback for older browsers - Mobile -->
+          <source src="assets/drone_final_mobile.mp4" type="video/mp4" media="(max-width: 767px)">
           <!-- Image de fallback si la vidéo ne charge pas -->
           <img
             src="./assets/drone_1.jpeg"
@@ -543,5 +550,76 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Responsive video loading optimization
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('hero-video');
+        const fallbackImage = video.querySelector('.hero-image');
+        const isMobile = window.innerWidth <= 768;
+        const isSlowConnection = navigator.connection && 
+          (navigator.connection.effectiveType === 'slow-2g' || 
+           navigator.connection.effectiveType === '2g');
+
+        // Only use image fallback for very slow connections (2G and below)
+        if (isSlowConnection) {
+          video.style.display = 'none';
+          if (fallbackImage) {
+            fallbackImage.style.display = 'block';
+            fallbackImage.style.opacity = '1';
+            fallbackImage.style.width = '100%';
+            fallbackImage.style.height = '100%';
+            fallbackImage.style.objectFit = 'cover';
+          }
+        } else {
+          // Show video for all other connections (including 3G, 4G, WiFi)
+          video.style.display = 'block';
+          if (fallbackImage) {
+            fallbackImage.style.display = 'none';
+          }
+        }
+
+        // Pause video when not visible (Intersection Observer) - only if video is showing
+        if ('IntersectionObserver' in window && video.style.display !== 'none') {
+          const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                video.play().catch(() => {
+                  // If video fails to play, show fallback image
+                  video.style.display = 'none';
+                  if (fallbackImage) {
+                    fallbackImage.style.display = 'block';
+                    fallbackImage.style.opacity = '1';
+                  }
+                });
+              } else {
+                video.pause();
+              }
+            });
+          }, { threshold: 0.5 });
+
+          videoObserver.observe(video);
+        }
+
+        // Handle video load errors
+        video.addEventListener('error', function() {
+          console.log('Video failed to load, showing fallback image');
+          video.style.display = 'none';
+          if (fallbackImage) {
+            fallbackImage.style.display = 'block';
+            fallbackImage.style.opacity = '1';
+          }
+        });
+
+        // Ensure video attempts to play when loaded
+        video.addEventListener('loadeddata', function() {
+          if (video.style.display !== 'none') {
+            video.play().catch(() => {
+              // Auto-play failed, but keep video visible for user interaction
+              console.log('Auto-play prevented, video ready for user interaction');
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
