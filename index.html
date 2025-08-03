@@ -46,6 +46,163 @@
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛥️</text></svg>" />
     
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- Structured Data for Better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://arbona-robin.github.io/drone-sauvetage/#article",
+          "headline": "Drone de Sauvetage en Mer - Projet Innovant par Greta & Ernest",
+          "description": "Un drone marin autonome conçu par deux enfants de 10 et 12 ans avec des matériaux recyclés. Stage CTRL+FUN - Partenariat ASPTT et la plateforme_.",
+          "image": [
+            "https://arbona-robin.github.io/drone-sauvetage/assets/drone_1.jpeg",
+            "https://arbona-robin.github.io/drone-sauvetage/assets/drone_2.jpeg",
+            "https://arbona-robin.github.io/drone-sauvetage/assets/conception.png"
+          ],
+          "author": [
+            {
+              "@type": "Person",
+              "name": "Greta",
+              "description": "Étudiante de 10 ans, stage CTRL+FUN"
+            },
+            {
+              "@type": "Person", 
+              "name": "Ernest",
+              "description": "Étudiant de 12 ans, stage CTRL+FUN"
+            }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "la plateforme_",
+            "url": "https://laplateforme.io/extrascolaire/"
+          },
+          "datePublished": "2025-07-31",
+          "dateModified": "2025-08-03",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://arbona-robin.github.io/drone-sauvetage/"
+          },
+          "keywords": ["drone marin", "sauvetage en mer", "micro:bit", "impression 3D", "écoconception", "robotique enfants", "STEM education"],
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Marine Rescue Drone"
+            },
+            {
+              "@type": "Thing", 
+              "name": "STEM Education"
+            },
+            {
+              "@type": "Thing",
+              "name": "Eco-design"
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://arbona-robin.github.io/drone-sauvetage/#howto",
+          "name": "Comment construire un drone de sauvetage en mer",
+          "description": "Guide étape par étape pour construire un drone marin de sauvetage avec micro:bit et matériaux recyclés",
+          "image": "https://arbona-robin.github.io/drone-sauvetage/assets/drone_final.mp4",
+          "totalTime": "P5D",
+          "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "EUR",
+            "value": "150"
+          },
+          "supply": [
+            {
+              "@type": "HowToSupply",
+              "name": "2x micro:bit v2"
+            },
+            {
+              "@type": "HowToSupply", 
+              "name": "Kitronik Robotics Board"
+            },
+            {
+              "@type": "HowToSupply",
+              "name": "2x moteurs étanches 3-6V DC"
+            },
+            {
+              "@type": "HowToSupply",
+              "name": "PLA biosourcé recyclé"
+            },
+            {
+              "@type": "HowToSupply",
+              "name": "Bouteilles plastique récupérées"
+            }
+          ],
+          "tool": [
+            {
+              "@type": "HowToTool",
+              "name": "Imprimante 3D"
+            },
+            {
+              "@type": "HowToTool",
+              "name": "Tinkercad (logiciel 3D)"
+            },
+            {
+              "@type": "HowToTool",
+              "name": "MakeCode micro:bit"
+            }
+          ],
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Conception & Design 3D",
+              "text": "Croquis initial et modélisation des pièces avec Tinkercad pour l'impression 3D"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2, 
+              "name": "Assemblage Structure",
+              "text": "Assemblage des flotteurs recyclés, fixation des moteurs étanches avec serflex"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Programmation micro:bit", 
+              "text": "Développement du code pour télécommande et drone avec sécurités intégrées"
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Tests en Mer",
+              "text": "Tests de flottabilité en bassin puis essais réels en mer"
+            }
+          ]
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://arbona-robin.github.io/drone-sauvetage/#organization",
+          "name": "la plateforme_",
+          "url": "https://laplateforme.io/extrascolaire/",
+          "description": "École de formation en informatique proposant des stages extrascolaires",
+          "partner": {
+            "@type": "SportsOrganization",
+            "name": "ASPTT Marseille",
+            "url": "https://marseille.asptt.com/"
+          }
+        },
+        {
+          "@type": "Course",
+          "@id": "https://arbona-robin.github.io/drone-sauvetage/#course",
+          "name": "Stage CTRL+FUN",
+          "description": "Stage combinant technologie le matin et voile l'après-midi",
+          "provider": {
+            "@type": "Organization",
+            "name": "la plateforme_"
+          },
+          "educationalLevel": "Enfants 10-12 ans",
+          "teaches": ["Programmation micro:bit", "Impression 3D", "Conception 3D", "Robotique", "Écoconception"]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <main>
