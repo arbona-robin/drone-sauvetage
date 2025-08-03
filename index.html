@@ -205,24 +205,16 @@
     </script>
   </head>
   <body>
-    <!-- Skip Navigation Link for Accessibility -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     
     <main id="main-content">
-    <!-- SECTION 1: HERO - Vidéo en arrière-plan avec titre et description -->
     <section class="hero">
       <div class="hero-background">
-        <!-- Vidéo du drone marin -->
         <video autoplay muted loop playsinline webkit-playsinline preload="metadata" class="hero-video" id="hero-video" aria-label="Vidéo de démonstration du drone de sauvetage en mer">
-          <!-- WebM format first (better compression) - Desktop -->
           <source src="assets/drone_final_hq.webm" type="video/webm" media="(min-width: 768px)">
-          <!-- WebM format first (better compression) - Mobile -->
           <source src="assets/drone_final_mobile_hq.webm" type="video/webm" media="(max-width: 767px)">
-          <!-- MP4 fallback for older browsers - Desktop -->
           <source src="assets/drone_final.mp4" type="video/mp4" media="(min-width: 768px)">
-          <!-- MP4 fallback for older browsers - Mobile -->
           <source src="assets/drone_final_mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-          <!-- Image de fallback si la vidéo ne charge pas -->
           <picture>
             <source srcset="./assets/drone_1.webp" type="image/webp">
             <img
@@ -234,7 +226,6 @@
           </picture>
         </video>
         
-        <!-- Video Accessibility Controls -->
         <div class="video-controls" aria-label="Contrôles de la vidéo">
           <button class="video-control-btn" id="video-toggle" aria-label="Pause/Lecture de la vidéo">
             <span id="video-toggle-text">Pause</span>
@@ -257,7 +248,6 @@
       </div>
     </section>
 
-    <!-- SECTION À PROPOS -->
     <section id="about" class="about" aria-labelledby="about-title">
       <div class="container">
         <h2 id="about-title" class="section-title">À propos du projet</h2>
@@ -322,7 +312,6 @@
       </div>
     </section>
 
-    <!-- SECTION 2: FONCTIONNALITÉS -->
     <section id="features" class="features" aria-labelledby="features-title">
       <div class="container">
         <h2 id="features-title" class="section-title">Fonctionnalités</h2>
@@ -331,7 +320,6 @@
         </p>
 
         <div class="features-grid">
-          <!-- Fonctionnalité 1 -->
           <div class="feature-card">
             <div class="feature-image">
               <picture>
@@ -363,7 +351,6 @@
             </div>
           </div>
 
-          <!-- Fonctionnalité 2 -->
           <div class="feature-card">
             <div class="feature-image">
               <picture>
@@ -387,7 +374,6 @@
             </div>
           </div>
 
-          <!-- Fonctionnalité 3 -->
           <div class="feature-card">
             <div class="feature-image">
               <picture>
@@ -414,7 +400,6 @@
       </div>
     </section>
 
-    <!-- SECTION 3: CARACTÉRISTIQUES TECHNIQUES -->
     <section class="specifications">
       <div class="container">
         <h2 class="section-title">Caractéristiques Techniques</h2>
@@ -502,7 +487,6 @@
       </div>
     </section>
 
-    <!-- SECTION 4: FABRICATION -->
     <section class="fabrication">
       <div class="container">
         <h2 class="section-title">Processus de Fabrication</h2>
@@ -615,7 +599,6 @@
         </div>
       </div>
 
-    <!-- SECTION 5: ÉCOCONCEPTION -->
     <section class="eco-design">
       <div class="container">
         <h2 class="section-title">Écoconception</h2>
@@ -714,7 +697,6 @@
     </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
@@ -729,7 +711,6 @@
       </div>
     </footer>
     <script>
-      // Responsive video loading optimization
       document.addEventListener('DOMContentLoaded', function() {
         const video = document.getElementById('hero-video');
         const fallbackImage = video.querySelector('.hero-image');
@@ -737,8 +718,6 @@
         const isSlowConnection = navigator.connection && 
           (navigator.connection.effectiveType === 'slow-2g' || 
            navigator.connection.effectiveType === '2g');
-
-        // Only use image fallback for very slow connections (2G and below)
         if (isSlowConnection) {
           video.style.display = 'none';
           if (fallbackImage) {
@@ -749,20 +728,16 @@
             fallbackImage.style.objectFit = 'cover';
           }
         } else {
-          // Show video for all other connections (including 3G, 4G, WiFi)
           video.style.display = 'block';
           if (fallbackImage) {
             fallbackImage.style.display = 'none';
           }
         }
-
-        // Pause video when not visible (Intersection Observer) - only if video is showing
         if ('IntersectionObserver' in window && video.style.display !== 'none') {
           const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 video.play().catch(() => {
-                  // If video fails to play, show fallback image
                   video.style.display = 'none';
                   if (fallbackImage) {
                     fallbackImage.style.display = 'block';
@@ -777,8 +752,6 @@
 
           videoObserver.observe(video);
         }
-
-        // Handle video load errors
         video.addEventListener('error', function() {
           console.log('Video failed to load, showing fallback image');
           video.style.display = 'none';
@@ -792,14 +765,11 @@
         video.addEventListener('loadeddata', function() {
           if (video.style.display !== 'none') {
             video.play().catch(() => {
-              // Auto-play failed, but keep video visible for user interaction
               console.log('Auto-play prevented, video ready for user interaction');
             });
           }
         });
       });
-
-      // Video Accessibility Controls
       const video = document.getElementById('hero-video');
       const toggleBtn = document.getElementById('video-toggle');
       const toggleText = document.getElementById('video-toggle-text');
@@ -817,10 +787,7 @@
           }
         });
       }
-
-      // Keyboard navigation improvements
       document.addEventListener('keydown', function(e) {
-        // Allow escape key to close any focused interactive elements
         if (e.key === 'Escape') {
           if (document.activeElement && document.activeElement.blur) {
             document.activeElement.blur();
